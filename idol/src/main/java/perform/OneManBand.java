@@ -18,6 +18,7 @@ public class OneManBand implements Perfomable {
         this.instrumentMap = instrumentMap;
     }
 
+    @Override
     public void perfom() {
         for (final Instrument instrument : instrumentList) {
             instrument.play();

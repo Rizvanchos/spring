@@ -8,6 +8,7 @@ public class Sonnet implements Poem {
         System.out.println("Opening poem...");
     }
 
+    @Override
     public void recite() {
         for (int i = 0; i < LINES.length; i++) {
             System.out.println(LINES[i]);

@@ -16,6 +16,7 @@ public class PoeticJuggler extends BeanBagJuggler implements InitializingBean, D
         this.poem = poem;
     }
 
+    @Override
     public void afterPropertiesSet() throws Exception {
         System.out.println("PoeticJuggler.afterPropertiesSet");
     }
@@ -27,6 +28,7 @@ public class PoeticJuggler extends BeanBagJuggler implements InitializingBean, D
         poem.recite();
     }
 
+    @Override
     public void destroy() throws Exception {
         System.out.println("PoeticJuggler.destroy");
     }

@@ -7,6 +7,7 @@ public class Instrumentalist implements Perfomable {
     private String song;
     private Instrument instrument;
 
+    @Override
     public void perfom() {
         System.out.println("Playing song: " + song);
         instrument.play();
