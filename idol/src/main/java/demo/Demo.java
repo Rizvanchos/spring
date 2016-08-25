@@ -11,6 +11,9 @@ public class Demo {
 
         final Perfomable perfomance = (Perfomable) context.getBean("duke");
         perfomance.perfom();
+
+        final Perfomable poeticJuggler = (Perfomable) context.getBean("poeticJuggler");
+        poeticJuggler.perfom();
     }
 
 }

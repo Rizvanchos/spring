@@ -6,4 +6,11 @@
 
     <bean id="duke" class="juggler.BeanBagJuggler"/>
 
+    <bean id="poeticJuggler" class="juggler.PoeticJuggler">
+        <constructor-arg value="15"/>
+        <constructor-arg ref="poem"/>
+    </bean>
+
+    <bean id="poem" class="poem.Sonnet"/>
+
 </beans>
