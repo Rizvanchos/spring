@@ -17,4 +17,18 @@
     <bean id="stage" class="stage.Stage" factory-method="getInstance" init-method="turnOnLights"
           destroy-method="turnOffLights"/>
 
+    <bean id="Kenny" class="perform.Instrumentalist">
+        <property name="song" value="My song"/>
+        <property name="instrument" ref="guitar"/>
+    </bean>
+
+    <bean id="Jerry" class="perform.Instrumentalist">
+        <property name="song" value="My song"/>
+        <property name="instrument">
+            <bean class="stage.instrument.Saxophone"/>
+        </property>
+    </bean>
+
+    <bean id="guitar" class="stage.instrument.Guitar"/>
+
 </beans>
