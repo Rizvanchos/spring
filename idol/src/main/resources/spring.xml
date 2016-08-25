@@ -18,17 +18,29 @@
           destroy-method="turnOffLights"/>
 
     <bean id="Kenny" class="perform.Instrumentalist">
-        <property name="song" value="My song"/>
+        <property name="song" value="#{'My song number ' + T(java.lang.Math).random()}"/>
         <property name="instrument" ref="guitar"/>
     </bean>
 
-    <bean id="Jerry" class="perform.Instrumentalist">
-        <property name="song" value="My song"/>
-        <property name="instrument">
-            <bean class="stage.instrument.Saxophone"/>
+    <bean id="Jerry" class="perform.OneManBand">
+        <property name="instrumentList">
+            <list>
+                <ref bean="guitar"/>
+                <ref bean="drums"/>
+                <ref bean="saxophone"/>
+            </list>
+        </property>
+        <property name="instrumentMap">
+            <map>
+                <entry key="Guitar" value-ref="guitar"/>
+                <entry key="Drums" value-ref="drums"/>
+                <entry key="Saxophone" value-ref="saxophone"/>
+            </map>
         </property>
     </bean>
 
     <bean id="guitar" class="stage.instrument.Guitar"/>
+    <bean id="drums" class="stage.instrument.Drums"/>
+    <bean id="saxophone" class="stage.instrument.Saxophone"/>
 
 </beans>
