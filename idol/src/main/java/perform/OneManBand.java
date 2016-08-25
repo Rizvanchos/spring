@@ -5,7 +5,7 @@ import stage.instrument.Instrument;
 import java.util.Collection;
 import java.util.Map;
 
-public class OneManBand implements Perfomable {
+public class OneManBand implements Performable {
 
     private Collection<Instrument> instrumentList;
     private Map<String, Instrument> instrumentMap;
@@ -19,7 +19,7 @@ public class OneManBand implements Perfomable {
     }
 
     @Override
-    public void perfom() {
+    public void perform() {
         for (final Instrument instrument : instrumentList) {
             instrument.play();
         }

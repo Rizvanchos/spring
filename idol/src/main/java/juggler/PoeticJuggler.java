@@ -22,8 +22,8 @@ public class PoeticJuggler extends BeanBagJuggler implements InitializingBean, D
     }
 
     @Override
-    public void perfom() {
-        super.perfom();
+    public void perform() {
+        super.perform();
         System.out.println("While reciting...");
         poem.recite();
     }

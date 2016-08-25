@@ -1,8 +1,8 @@
 package juggler;
 
-import perform.Perfomable;
+import perform.Performable;
 
-public class BeanBagJuggler implements Perfomable {
+public class BeanBagJuggler implements Performable {
     private int beanBags = 3;
 
     public BeanBagJuggler() {
@@ -13,7 +13,7 @@ public class BeanBagJuggler implements Perfomable {
     }
 
     @Override
-    public void perfom() {
+    public void perform() {
         System.out.println("JUGGLING " + beanBags + " BEANBAGS");
     }
 }

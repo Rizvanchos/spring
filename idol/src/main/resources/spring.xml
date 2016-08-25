@@ -43,4 +43,10 @@
     <bean id="drums" class="stage.instrument.Drums"/>
     <bean id="saxophone" class="stage.instrument.Saxophone"/>
 
+    <bean id="magician" class="magic.Magician">
+        <property name="magicBox" ref="blackBox"/>
+    </bean>
+
+    <bean id="blackBox" class="magic.BlackMagicBox" />
+
 </beans>

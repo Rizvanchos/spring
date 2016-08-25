@@ -2,24 +2,27 @@ package demo;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import perform.Perfomable;
+import perform.Performable;
 
 public class Demo {
 
     public static void main(final String[] args) {
         final ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 
-        final Perfomable perfomance = (Perfomable) context.getBean("duke");
-        perfomance.perfom();
+        final Performable performance = (Performable) context.getBean("duke");
+        performance.perform();
 
-        final Perfomable poeticJuggler = (Perfomable) context.getBean("poeticJuggler");
-        poeticJuggler.perfom();
+        final Performable poeticJuggler = (Performable) context.getBean("poeticJuggler");
+        poeticJuggler.perform();
 
-        final Perfomable Kenny = (Perfomable) context.getBean("Kenny");
-        Kenny.perfom();
+        final Performable Kenny = (Performable) context.getBean("Kenny");
+        Kenny.perform();
 
-        final Perfomable Jerry = (Perfomable) context.getBean("Jerry");
-        Jerry.perfom();
+        final Performable Jerry = (Performable) context.getBean("Jerry");
+        Jerry.perform();
+
+        final Performable magician = (Performable) context.getBean("magician");
+        magician.perform();
     }
 
 }

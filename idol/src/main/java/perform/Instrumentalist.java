@@ -2,13 +2,13 @@ package perform;
 
 import stage.instrument.Instrument;
 
-public class Instrumentalist implements Perfomable {
+public class Instrumentalist implements Performable {
 
     private String song;
     private Instrument instrument;
 
     @Override
-    public void perfom() {
+    public void perform() {
         System.out.println("Playing song: " + song);
         instrument.play();
     }
