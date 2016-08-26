@@ -57,4 +57,14 @@
 
     <bean id="tigerReplacer" class="magic.TigerReplacer"/>
 
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="jdbc.properties"/>
+    </bean>
+
+    <bean id="databaseManager" class="db.DatabaseManager">
+        <constructor-arg name="url" value="${database.url}"/>
+        <constructor-arg name="username" value="${database.username}"/>
+        <constructor-arg name="password" value="${database.password}"/>
+    </bean>
+
 </beans>
