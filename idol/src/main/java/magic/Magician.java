@@ -19,13 +19,11 @@ public class Magician implements Performable, BeanPostProcessor {
 
     @Override
     public Object postProcessBeforeInitialization(final Object bean, final String beanName) throws BeansException {
-        System.out.println("Magician.postProcessBeforeInitialization");
         return bean;
     }
 
     @Override
     public Object postProcessAfterInitialization(final Object bean, final String beanName) throws BeansException {
-        System.out.println("Magician.postProcessAfterInitialization");
         return bean;
     }
 }

@@ -7,9 +7,8 @@
 
     <bean id="duke" class="juggler.BeanBagJuggler"/>
 
-    <bean id="poeticJuggler" class="juggler.PoeticJuggler">
+    <bean id="poeticJuggler" class="juggler.PoeticJuggler" autowire="constructor">
         <constructor-arg value="15"/>
-        <constructor-arg ref="poem"/>
     </bean>
 
     <bean id="poem" class="poem.Sonnet"/>
@@ -17,7 +16,7 @@
     <bean id="stage" class="stage.Stage" factory-method="getInstance" init-method="turnOnLights"
           destroy-method="turnOffLights"/>
 
-    <bean id="Kenny" class="perform.Instrumentalist">
+    <bean id="Kenny" class="perform.Instrumentalist" autowire="byType">
         <property name="song" value="#{'My song number ' + T(java.lang.Math).random()}"/>
         <property name="instrument" ref="guitar"/>
     </bean>
@@ -44,14 +43,12 @@
     </bean>
 
     <bean id="guitar" class="stage.instrument.Guitar" scope="prototype"/>
-    <bean id="drums" class="stage.instrument.Drums"/>
-    <bean id="saxophone" class="stage.instrument.Saxophone"/>
+    <bean id="drums" class="stage.instrument.Drums" autowire-candidate="false"/>
+    <bean id="saxophone" class="stage.instrument.Saxophone" autowire-candidate="false"/>
 
-    <bean id="magician" class="magic.Magician">
-        <property name="magicBox" ref="blackBox"/>
-    </bean>
+    <bean id="magician" class="magic.Magician" autowire="byName"/>
 
-    <bean id="blackBox" class="magic.BlackMagicBox">
+    <bean id="magicBox" class="magic.BlackMagicBox">
         <replaced-method name="getContent" replacer="tigerReplacer"/>
     </bean>
 
