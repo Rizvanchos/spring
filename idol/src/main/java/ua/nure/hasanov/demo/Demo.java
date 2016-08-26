@@ -8,7 +8,7 @@ import ua.nure.hasanov.perform.Performable;
 public class Demo {
 
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("annotation-spring.xml");
 
         performance(context);
         properties(context);
@@ -21,10 +21,10 @@ public class Demo {
         Performable poeticJuggler = (Performable) context.getBean("poeticJuggler");
         poeticJuggler.perform();
 
-        Performable kenny = (Performable) context.getBean("Kenny");
+        Performable kenny = (Performable) context.getBean("kenny");
         kenny.perform();
 
-        Performable jerry = (Performable) context.getBean("Jerry");
+        Performable jerry = (Performable) context.getBean("jerry");
         jerry.perform();
 
         Performable magician = (Performable) context.getBean("magician");

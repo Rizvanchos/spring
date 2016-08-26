@@ -16,11 +16,11 @@
     <bean id="stage" class="ua.nure.hasanov.stage.Stage" factory-method="getInstance" init-method="turnOnLights"
           destroy-method="turnOffLights"/>
 
-    <bean id="Kenny" class="ua.nure.hasanov.perform.Instrumentalist">
+    <bean id="kenny" class="ua.nure.hasanov.perform.Instrumentalist">
         <property name="song" value="#{'My song number ' + T(java.lang.Math).random()}"/>
     </bean>
 
-    <bean id="Jerry" class="ua.nure.hasanov.perform.OneManBand">
+    <bean id="jerry" class="ua.nure.hasanov.perform.OneManBand">
         <property name="instrumentList">
             <list>
                 <ref bean="guitar"/>
