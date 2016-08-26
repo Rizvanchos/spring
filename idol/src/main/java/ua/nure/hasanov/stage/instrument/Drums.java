@@ -1,5 +1,8 @@
-package stage.instrument;
+package ua.nure.hasanov.stage.instrument;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Drums implements Instrument {
 
     @Override

@@ -1,11 +1,14 @@
-package poem;
+package ua.nure.hasanov.poem;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Sonnet implements Poem {
 
     private static final String[] LINES = {"First line", "Second line", "Third line"};
 
     private void init() {
-        System.out.println("Opening poem...");
+        System.out.println("Opening ua.nure.hasanov.poem...");
     }
 
     @Override
@@ -16,6 +19,6 @@ public class Sonnet implements Poem {
     }
 
     private void destroy() {
-        System.out.println("Closing poem...");
+        System.out.println("Closing ua.nure.hasanov.poem...");
     }
 }

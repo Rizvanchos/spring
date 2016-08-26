@@ -1,17 +1,25 @@
-package juggler;
+package ua.nure.hasanov.juggler;
 
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
-import poem.Poem;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import ua.nure.hasanov.poem.Poem;
 
+@Component
 public class PoeticJuggler extends BeanBagJuggler implements InitializingBean, DisposableBean {
-    private final Poem poem;
 
-    public PoeticJuggler(final Poem poem) {
+    @Autowired
+    private Poem poem;
+
+    public PoeticJuggler() {
+    }
+
+    public PoeticJuggler(Poem poem) {
         this.poem = poem;
     }
 
-    public PoeticJuggler(final int beanBags, final Poem poem) {
+    public PoeticJuggler(int beanBags, Poem poem) {
         super(beanBags);
         this.poem = poem;
     }

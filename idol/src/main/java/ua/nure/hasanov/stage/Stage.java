@@ -1,5 +1,8 @@
-package stage;
+package ua.nure.hasanov.stage;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Stage {
 
     private Stage() {

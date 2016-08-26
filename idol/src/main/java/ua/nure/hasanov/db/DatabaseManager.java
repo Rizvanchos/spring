@@ -1,4 +1,4 @@
-package db;
+package ua.nure.hasanov.db;
 
 public class DatabaseManager {
 
@@ -6,7 +6,7 @@ public class DatabaseManager {
     private final String username;
     private final String password;
 
-    public DatabaseManager(final String url, final String username, final String password) {
+    public DatabaseManager(String url, String username, String password) {
         this.url = url;
         this.username = username;
         this.password = password;

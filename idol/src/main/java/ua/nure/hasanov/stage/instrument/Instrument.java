@@ -1,4 +1,4 @@
-package stage.instrument;
+package ua.nure.hasanov.stage.instrument;
 
 public interface Instrument {
     void play();

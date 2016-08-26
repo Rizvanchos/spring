@@ -1,7 +1,9 @@
-package perform;
+package ua.nure.hasanov.perform;
 
-import stage.instrument.Instrument;
+import org.springframework.stereotype.Component;
+import ua.nure.hasanov.stage.instrument.Instrument;
 
+@Component
 public abstract class VirtuosoMusician implements Performable {
 
     @Override
