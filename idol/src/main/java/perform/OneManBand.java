@@ -29,4 +29,8 @@ public class OneManBand implements Performable {
         }
     }
 
+    public Collection<Instrument> getInstrumentList() {
+        return instrumentList;
+    }
+
 }

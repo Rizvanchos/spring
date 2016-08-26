@@ -39,7 +39,11 @@
         </property>
     </bean>
 
-    <bean id="guitar" class="stage.instrument.Guitar"/>
+    <bean id="virtuoso" class="perform.VirtuosoMusician">
+        <lookup-method name="getInstrument" bean="guitar"/>
+    </bean>
+
+    <bean id="guitar" class="stage.instrument.Guitar" scope="prototype"/>
     <bean id="drums" class="stage.instrument.Drums"/>
     <bean id="saxophone" class="stage.instrument.Saxophone"/>
 
@@ -47,6 +51,10 @@
         <property name="magicBox" ref="blackBox"/>
     </bean>
 
-    <bean id="blackBox" class="magic.BlackMagicBox" />
+    <bean id="blackBox" class="magic.BlackMagicBox">
+        <replaced-method name="getContent" replacer="tigerReplacer"/>
+    </bean>
+
+    <bean id="tigerReplacer" class="magic.TigerReplacer"/>
 
 </beans>

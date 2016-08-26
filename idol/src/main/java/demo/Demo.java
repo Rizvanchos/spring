@@ -23,6 +23,9 @@ public class Demo {
 
         final Performable magician = (Performable) context.getBean("magician");
         magician.perform();
+
+        final Performable virtuoso = (Performable) context.getBean("virtuoso");
+        virtuoso.perform();
     }
 
 }
