@@ -18,7 +18,7 @@ public class Magician implements Performable, BeanPostProcessor {
 
     @Override
     public void perform() {
-        System.out.println("Prepare for ua.nure.hasanov.magic ua.nure.hasanov.magic: " + magicBox.getContent());
+        System.out.println("Prepare for magic: " + magicBox.getContent());
     }
 
     @Override

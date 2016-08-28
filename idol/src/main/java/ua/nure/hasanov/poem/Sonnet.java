@@ -8,7 +8,7 @@ public class Sonnet implements Poem {
     private static final String[] LINES = {"First line", "Second line", "Third line"};
 
     private void init() {
-        System.out.println("Opening ua.nure.hasanov.poem...");
+        System.out.println("Opening poem...");
     }
 
     @Override
@@ -19,6 +19,6 @@ public class Sonnet implements Poem {
     }
 
     private void destroy() {
-        System.out.println("Closing ua.nure.hasanov.poem...");
+        System.out.println("Closing poem...");
     }
 }

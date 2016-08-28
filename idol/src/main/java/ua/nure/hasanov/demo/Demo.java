@@ -8,7 +8,7 @@ import ua.nure.hasanov.perform.Performable;
 public class Demo {
 
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("annotation-spring.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 
         performance(context);
         properties(context);
