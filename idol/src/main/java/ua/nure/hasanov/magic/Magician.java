@@ -7,10 +7,12 @@ import org.springframework.stereotype.Component;
 import ua.nure.hasanov.perform.Performable;
 
 @Component
-public class Magician implements Performable, BeanPostProcessor {
+public class Magician implements Performable, MindReader, BeanPostProcessor {
 
     @Autowired
     private MagicBox magicBox;
+
+    private String thoughts;
 
     public void setMagicBox(MagicBox magicBox) {
         this.magicBox = magicBox;
@@ -29,5 +31,16 @@ public class Magician implements Performable, BeanPostProcessor {
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         return bean;
+    }
+
+    @Override
+    public void interceptThoughts(String thoughts) {
+        System.out.println("Intercepting volunteer’s thoughts");
+        this.thoughts = thoughts;
+    }
+
+    @Override
+    public String getThoughts() {
+        return thoughts;
     }
 }

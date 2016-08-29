@@ -1,5 +1,6 @@
 package ua.nure.hasanov.perform;
 
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -21,4 +22,17 @@ public class Audience {
         System.out.println("Boo! We want our money back!");
     }
 
+    public void watchPerformance(ProceedingJoinPoint joinPoint) {
+        try {
+            takeSeats();
+            turnOffCellPhones();
+            long start = System.currentTimeMillis();
+            joinPoint.proceed();
+            long end = System.currentTimeMillis();
+            applaud();
+            System.out.println("The performance took " + (end - start) + " milliseconds.");
+        } catch (Throwable ex) {
+            demandRefund();
+        }
+    }
 }

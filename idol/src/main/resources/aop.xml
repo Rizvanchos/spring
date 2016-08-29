@@ -10,11 +10,23 @@
     <aop:config>
         <aop:aspect ref="audience">
             <aop:pointcut id="performance" expression="execution(* ua.nure.hasanov.perform.Performable.perform(..))" />
+
             <aop:before method="takeSeats" pointcut-ref="performance" />
             <aop:before method="turnOffCellPhones" pointcut-ref="performance"  />
             <aop:after-returning method="applaud" pointcut-ref="performance" />
             <aop:after-throwing method="demandRefund" pointcut-ref="performance" />
         </aop:aspect>
+
+        <aop:aspect ref="audience">
+            <aop:pointcut id="watchPerformance" expression="execution(* ua.nure.hasanov.perform.Performable.perform(..))" />
+            <aop:around method="watchPerformance" pointcut-ref="watchPerformance" />
+        </aop:aspect>
+
+        <aop:aspect ref="magician">
+            <aop:pointcut id="thinking" expression="execution(* ua.nure.hasanov.magic.Thinker.think(String)) and args(thoughts)" />
+            <aop:before method="interceptThoughts" pointcut-ref="thinking" arg-names="thoughts" />
+        </aop:aspect>
+
     </aop:config>
 
 </beans>
