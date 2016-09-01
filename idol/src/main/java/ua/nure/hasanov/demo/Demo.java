@@ -1,9 +1,15 @@
 package ua.nure.hasanov.demo;
 
+import org.hibernate.Session;
+import org.hibernate.cfg.Configuration;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import ua.nure.hasanov.db.DatabaseManager;
+import ua.nure.hasanov.stage.instrument.Guitar;
 import ua.nure.hasanov.perform.Performable;
+
+import javax.persistence.EntityManager;
+import javax.persistence.Persistence;
 
 public class Demo {
 
@@ -12,6 +18,30 @@ public class Demo {
 
         performance(context);
         properties(context);
+
+        hibernate();
+        entityManager();
+    }
+
+    private static void entityManager() {
+        EntityManager entityManager = Persistence.createEntityManagerFactory("entityManager").createEntityManager();
+
+        Guitar guitar = entityManager.find(Guitar.class, 1);
+        System.out.println(guitar.getName());
+    }
+
+    private static void hibernate() {
+        Session session = new Configuration().addPackage("ua.nure.hasanov").addAnnotatedClass(Guitar.class).addResource("hibernate.cfg.xml").configure().buildSessionFactory().openSession();
+        session.beginTransaction();
+
+        Guitar guitar = new Guitar();
+        guitar.setName("Gibson");
+        guitar.setColor("black");
+
+        session.save(guitar);
+
+        session.getTransaction().commit();
+        session.close();
     }
 
     private static void performance(ApplicationContext context) {
