@@ -1,15 +1,24 @@
 package ua.nure.hasanov.magic;
 
 import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.stereotype.Component;
 import ua.nure.hasanov.perform.Performable;
 
-@Component
-public class Magician implements Performable, MindReader, BeanPostProcessor {
+import javax.persistence.*;
+import java.io.Serializable;
 
-    @Autowired
+@Entity
+@Table
+@Component
+public class Magician implements Performable, MindReader, BeanPostProcessor, Serializable {
+
+    @Id
+    @GeneratedValue
+    @Column(nullable = false, unique = true)
+    private Integer id;
+
+    @OneToOne(targetEntity = BlackMagicBox.class, cascade = CascadeType.ALL)
     private MagicBox magicBox;
 
     private String thoughts;
@@ -39,8 +48,20 @@ public class Magician implements Performable, MindReader, BeanPostProcessor {
         this.thoughts = thoughts;
     }
 
+    public MagicBox getMagicBox() {
+        return magicBox;
+    }
+
     @Override
     public String getThoughts() {
         return thoughts;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }
