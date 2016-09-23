@@ -5,12 +5,10 @@ import ua.nure.hasanov.entity.User;
 import ua.nure.hasanov.repository.UserRepository;
 
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
-@PersistenceContext
 @Repository("userRepository")
 public class DefaultUserRepository extends AbstractRepository<User> implements UserRepository {
 

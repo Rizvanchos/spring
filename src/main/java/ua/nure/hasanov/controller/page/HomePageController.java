@@ -12,7 +12,11 @@ public class HomePageController extends AbstractPageController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String home() {
-        return ControllerConstants.Views.Pages.HOMEPAGE;
+        return getView();
     }
 
+    @Override
+    protected String getView() {
+        return ControllerConstants.Views.Pages.HOMEPAGE;
+    }
 }

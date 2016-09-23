@@ -1,12 +1,24 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+
 Registration
 <br>
-<form action="account/register" method="post">
+<form:form commandName="registerForm" action="registration/register" method="post">
     <label>login</label>
-    <input id="email" type="email" required/>
+    <form:errors path="email"/>
+    <form:input path="email" required="required" />
+    <br>
     <label>password</label>
-    <input id="password" type="password" required/>
+    <form:errors path="password"/>
+    <form:password path="password" required="required" />
+    <br>
     <label>firstName</label>
-    <input id="firstName" type="firstName" required/>
+    <form:errors path="firstName"/>
+    <form:input path="firstName" required="required" />
+    <br>
     <label>lastName</label>
-    <input id="lastName" type="lastName" required/>
-</form>
+    <form:errors path="lastName"/>
+    <form:input path="lastName" />
+    <br>
+    <form:button value="Register"/>
+</form:form>

@@ -24,8 +24,4 @@ public class DefaultUserService implements UserService {
         userRepository.add(user);
         userRepository.commit();
     }
-
-    public void setUserRepository(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
 }

@@ -20,10 +20,11 @@ public class AccountController extends AbstractPageController {
     @RequestMapping(value = "/user", method = RequestMethod.GET)
     public String account(@RequestParam String login, Model model) {
         model.addAttribute(userService.find(login));
-        return ControllerConstants.Views.Pages.HOMEPAGE;
+        return getView();
     }
 
-    public void setUserService(UserService userService) {
-        this.userService = userService;
+    @Override
+    protected String getView() {
+        return ControllerConstants.Views.Pages.HOMEPAGE;
     }
 }

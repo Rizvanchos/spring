@@ -19,10 +19,6 @@ public abstract class AbstractRepository<T extends DomainEntity> implements Repo
         this.clazz = clazz;
     }
 
-    public void setEntityManager(EntityManager entityManager) {
-        this.entityManager = entityManager;
-    }
-
     protected EntityManager getEntityManager() {
         return entityManager;
     }
